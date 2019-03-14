@@ -1,6 +1,6 @@
 package Interview_Prep;
 
-public class No4_Maximum_Sum_Increasing_Subsequence_GFG {
+public class No4_Maximum_Sum_Increasing_Subsequence {
 
 	public static void main(String[] args) {
 

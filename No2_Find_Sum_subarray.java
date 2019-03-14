@@ -1,6 +1,6 @@
 package Interview_Prep;
 
-public class No2_Find_Sum_subarray_GFG {
+public class No2_Find_Sum_subarray {
 
 	public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package Interview_Prep;
 
-public class No3_Equilibrium_Index_GFG {
+public class No3_Equilibrium_Index {
 
 	public static void main(String[] args) {
 		int[] a = { -7, 1, 5, 2, -4, 3, 0 };
