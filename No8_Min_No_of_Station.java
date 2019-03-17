@@ -45,35 +45,7 @@ public class No8_Min_No_of_Station {
 
 		}
 
-//		int[] time = new int[arrival.length + departure.length];
-//
-//		for (int i = 0; i < arrival.length; i++) {
-//			time[i] = arrival[i];
-//		}
-//
-//		int j = arrival.length;
-//
-//		for (int i = 0; i < departure.length; i++) {
-//			time[j] = departure[i];
-//			j++;
-//		}
-//
-//		Arrays.sort(time);
-//
-////
-////		TreeMap<Integer, Boolean> map = new TreeMap<Integer, Boolean>();
-////
-////		for (int i = 0; i < arrival.length; i++) {
-////			map.put(arrival[i], true);
-////		}
-////
-////		for (int i = 0; i < departure.length; i++) {
-////			map.put(departure[i], false);
-////		}
-////
-////		System.out.println(map);
-//		
-
+	
 		int i = 0;
 		int j = 0;
 		int platform = 0;
@@ -95,6 +67,7 @@ public class No8_Min_No_of_Station {
 
 			}
 
+			
 		}
 
 		System.out.println(result);
