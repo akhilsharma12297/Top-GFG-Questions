@@ -1,7 +1,6 @@
 package Interview_Prep;
 
 import java.util.Map;
-import java.util.Scanner;
 import java.util.TreeMap;
 
 //https://www.geeksforgeeks.org/find-k-pairs-smallest-sums-two-arrays/
@@ -42,7 +41,7 @@ public class No12_K_smallest_pair {
 			}
 
 		}
-
+ 
 		int i = 1;
 		for (Map.Entry<Integer, Node> data : map.entrySet()) {
 
