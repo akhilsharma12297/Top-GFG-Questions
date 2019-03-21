@@ -6,8 +6,7 @@ public class No23_Sort_0_1 {
 
 	public static void main(String[] args) {
 
-		int[] arr = {0, 1, 2, 0, 1, 2};
-
+		int[] arr = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
 		func(arr);
 
 		for (int x : arr) {
@@ -41,21 +40,16 @@ public class No23_Sort_0_1 {
 
 		}
 
-		for (int x = zeroctr; x < arr.length; x++) {
+		for (int x = arr.length - 1; x > zeroctr; x--) {
 
-		if (x < end)
+			if (arr[x] > 1) {
+				int temp = arr[x];
 
-			{
+				arr[x] = arr[end];
 
-				if (arr[x] > 1) {
-					int temp = arr[x];
+				arr[end] = temp;
 
-					arr[x] = arr[end];
-
-					arr[end] = temp;
-
-					end--;
-				}
+				end--;
 			}
 
 		}
