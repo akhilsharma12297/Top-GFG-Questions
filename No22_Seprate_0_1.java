@@ -10,48 +10,32 @@ public class No22_Seprate_0_1 {
 
 		int[] arr = { 0, 1, 0, 1, 0, 0, 1, 1, 1, 0 };
 
-		int[] res = func(arr);
+		func(arr);
 
-		for (int i : res) {
+		for (int i : arr) {
 			System.out.print(i + " ");
 		}
 
-		System.out.println("     " + arr.length + " 46");
 	}
 
-	public static int[] func(int[] arr) {
+	public static void func(int[] arr) {
 
 		int start = 0;
 
-		int end = arr.length - 1;
+		for (int i = 0; i < arr.length; i++) {
 
-		int i = 0;
+			if (arr[i] == 0) {
 
-		int zctr = 0;
+				int temp = arr[i];
 
-		for (int j = 0; j < arr.length; j++) {
+				arr[i] = arr[start];
 
-			if (arr[j] == 0) {
-				zctr++;
+				arr[start] = temp;
+
+				start++;
 			}
 
 		}
-
-		int[] res = new int[arr.length];
-
-		for (int j = 0; j < arr.length; j++) {
-
-			if (zctr == 0) {
-				res[j] = 1;
-			} else {
-
-				res[j] = 0;
-				zctr--;
-			}
-
-		}
-
-		return res;
 
 	}
 
