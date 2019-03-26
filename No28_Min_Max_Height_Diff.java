@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 //https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/
 
-public class No_28_Min_Max_Height_Diff {
+public class No28_Min_Max_Height_Diff {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
