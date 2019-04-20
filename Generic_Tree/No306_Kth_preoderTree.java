@@ -1,8 +1,6 @@
-package Interview_Prep;
+package Generic_Tree;
 
 import java.util.ArrayList;
-
-import Interview_Prep.No304_GT_Node_W_MAX_CHILDRENSIZE.Node;
 
 public class No306_Kth_preoderTree {
 

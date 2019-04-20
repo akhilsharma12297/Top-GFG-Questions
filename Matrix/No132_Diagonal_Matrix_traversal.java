@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Matrix;
 
 //https://www.geeksforgeeks.org/zigzag-or-diagonal-traversal-of-matrix/
 

@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 //https://www.geeksforgeeks.org/find-smallest-value-represented-sum-subset-given-array/
 

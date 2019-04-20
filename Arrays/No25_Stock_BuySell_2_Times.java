@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 public class No25_Stock_BuySell_2_Times {
 

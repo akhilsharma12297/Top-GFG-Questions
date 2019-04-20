@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 //https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
 

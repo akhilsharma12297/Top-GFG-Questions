@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 public class No4_Maximum_Sum_Increasing_Subsequence {
 

@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 public class No2_Find_Sum_subarray {
 

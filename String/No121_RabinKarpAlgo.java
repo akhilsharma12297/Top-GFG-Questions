@@ -1,4 +1,4 @@
-package Interview_Prep;
+package String;
 
 //https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/
 

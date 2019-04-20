@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 public class No14_Sorted_Roatated_Pair {
 

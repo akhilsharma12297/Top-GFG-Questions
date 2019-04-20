@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Matrix;
 
 import java.util.ArrayList;
 import java.util.Stack;

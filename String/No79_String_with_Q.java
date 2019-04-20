@@ -1,4 +1,4 @@
-package Interview_Prep;
+package String;
 
 //https://www.geeksforgeeks.org/generate-all-binary-strings-from-given-pattern/
 
@@ -21,6 +21,7 @@ public class No79_String_with_Q {
 		}
 
 		if (str[i] == '?') {
+
 			str[i] = '1';
 			func(str, i + 1);
 

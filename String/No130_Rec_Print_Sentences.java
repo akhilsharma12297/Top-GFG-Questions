@@ -1,4 +1,4 @@
-package Interview_Prep;
+package String;
 
 //https://www.geeksforgeeks.org/recursively-print-all-sentences-that-can-be-formed-from-list-of-word-lists/
 

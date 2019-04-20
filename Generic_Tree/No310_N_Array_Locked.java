@@ -1,9 +1,7 @@
-package Interview_Prep;
+package Generic_Tree;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
-import Interview_Prep.No304_GT_Node_W_MAX_CHILDRENSIZE.Node;
 
 //  https://www.careercup.com/question?id=10508082
 

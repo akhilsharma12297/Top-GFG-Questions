@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 import java.util.Collections;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package Interview_Prep;
+package String;
 
 import java.util.Arrays;
 
@@ -8,14 +8,12 @@ public class No78_Words_same_Char {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(func("akhil"));
+		System.out.println();
 	}
 
-	public static void func(String[] word) {
+	public static void func(String str) {
 
-		for (int i = 0; i < word.length; i++) {
-
-			String key = word[i];
+		for (int i = 0; i < str.length(); i++) {
 
 		}
 

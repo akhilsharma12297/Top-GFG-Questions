@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 //https://www.geeksforgeeks.org/generate-all-possible-sorted-arrays-from-alternate-elements-of-two-given-arrays/
 

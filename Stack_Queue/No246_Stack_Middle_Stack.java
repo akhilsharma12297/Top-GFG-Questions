@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Stack_Queue;
 
 //https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
 

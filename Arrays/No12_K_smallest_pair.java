@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Arrays;
 
 import java.util.Map;
 import java.util.TreeMap;

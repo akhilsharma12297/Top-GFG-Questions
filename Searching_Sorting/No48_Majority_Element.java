@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Searching_Sorting;
 
 import java.util.HashMap;
 

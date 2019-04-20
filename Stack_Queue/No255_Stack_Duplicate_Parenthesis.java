@@ -1,4 +1,4 @@
-package Interview_Prep;
+package Stack_Queue;
 
 import java.util.HashMap;
 import java.util.Stack;
