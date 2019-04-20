@@ -3,8 +3,6 @@ package Generic_Tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import Interview_Prep.No300_GT_Just_Smaller.Node;
-
 public class No303_GT_Just_Larger {
 
 	class Node {
