@@ -5,7 +5,8 @@ package Arrays;
 public class No10_Stock_Buy_Sell {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+// TODO Auto-generated method stub
 
 		int arr[] = { 100, 180, 260, 310, 40, 535, 695 };
 

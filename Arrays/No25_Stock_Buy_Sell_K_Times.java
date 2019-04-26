@@ -1,6 +1,6 @@
 package Arrays;
 
-public class No25_Stock_BuySell_2_Times {
+public class No25_Stock_Buy_Sell_K_Times {
 
 	public static void main(String[] args) {
 

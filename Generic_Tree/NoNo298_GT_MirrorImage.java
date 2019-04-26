@@ -3,7 +3,7 @@ package Generic_Tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class No298_GT_MirrorImage {
+public class 298_GT_MirrorImage {
 
 	class Node {
 		int data;
