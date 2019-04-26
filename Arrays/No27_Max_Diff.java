@@ -9,12 +9,14 @@ public class No27_Max_Diff {
 
 		int[] arr = { 3, 3, 5, 6, 4, 8, 1 };
 
-		func(arr);
+		basic(arr);
 
-		maxDiff(arr);
+		better(arr);
+
+		best(arr);
 	}
 
-	public static void func(int[] arr) {
+	public static void basic(int[] arr) {
 
 		int result = 0;
 
@@ -32,7 +34,7 @@ public class No27_Max_Diff {
 		System.out.println(result);
 	}
 
-	public static void maxDiff(int arr[]) {
+	public static void better(int arr[]) {
 
 		int n = arr.length - 1;
 
@@ -56,4 +58,20 @@ public class No27_Max_Diff {
 		System.out.println(max_sum);
 	}
 
+	public static void best(int[] arr) {
+
+		int[] profit = new int[arr.length];
+
+		int max_price = arr[arr.length - 1];
+		for (int i = arr.length - 2; i >= 0; i--) {
+
+			if (arr[i] > max_price)
+				max_price = arr[i];
+
+			profit[i] = Math.max(profit[i + 1], max_price - arr[i]);
+		}
+
+		System.out.println(profit[0]);
+
+	}
 }

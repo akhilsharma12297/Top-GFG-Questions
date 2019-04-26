@@ -3,7 +3,7 @@ package Generic_Tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class 298_GT_MirrorImage {
+public class NoNo298_GT_MirrorImage {
 
 	class Node {
 		int data;
@@ -14,7 +14,7 @@ public class 298_GT_MirrorImage {
 	Node root;
 	int size = 0;
 
-	public No298_GT_MirrorImage(int[] arr) {
+	public NoNo298_GT_MirrorImage(int[] arr) {
 
 		Stack<Node> stack = new Stack();
 
@@ -65,7 +65,7 @@ public class 298_GT_MirrorImage {
 
 	}
 
-	public void isMirrorImage(No298_GT_MirrorImage gt2) {
+	public void isMirrorImage(NoNo298_GT_MirrorImage gt2) {
 		if (isMirrorImage(this.root, gt2.root)) {
 			System.out.println("True");
 		} else {
@@ -98,9 +98,9 @@ public class 298_GT_MirrorImage {
 
 		int[] arr2 = { 10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, 140,
 				-1, -1, -1 };
-		No298_GT_MirrorImage gt = new No298_GT_MirrorImage(arr);
+		NoNo298_GT_MirrorImage gt = new NoNo298_GT_MirrorImage(arr);
 
-		No298_GT_MirrorImage gt2 = new No298_GT_MirrorImage(arr2);
+		NoNo298_GT_MirrorImage gt2 = new NoNo298_GT_MirrorImage(arr2);
 
 		gt.isMirrorImage(gt2);
 
