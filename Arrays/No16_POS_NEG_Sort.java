@@ -41,8 +41,6 @@ public class No16_POS_NEG_Sort {
 			neg += 2;
 		}
 
-		for (int a : arr) {
-			System.out.print(a + " ");
-		}
 	}
+
 }

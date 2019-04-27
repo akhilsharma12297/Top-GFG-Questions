@@ -74,4 +74,25 @@ public class No27_Max_Diff {
 		System.out.println(profit[0]);
 
 	}
+
+	public static void func(int[] arr, int size) {
+
+		int[] dp = new int[size];
+
+		dp[0] = 0;
+
+		int small = arr[0];
+
+		for (int i = 1; i < arr.length; i++) {
+			if (small > arr[i]) {
+				small = arr[i];
+			}
+
+			dp[i] = Math.max(dp[i - 1], arr[i] - small);
+		}
+
+		System.out.println(dp[size - 1]);
+
+	}
+
 }
