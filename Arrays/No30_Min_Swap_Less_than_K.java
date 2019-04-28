@@ -2,7 +2,7 @@ package Arrays;
 
 //https://www.geeksforgeeks.org/minimum-swaps-required-bring-elements-less-equal-k-together/
 
-public class No28_Min_Swap_Less_than_K {
+public class No30_Min_Swap_Less_than_K {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
