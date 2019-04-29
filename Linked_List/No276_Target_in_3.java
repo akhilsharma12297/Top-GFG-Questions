@@ -14,9 +14,9 @@ public class No276_Target_in_3 {
 	public static boolean Target(No276_Target_in_3 list, No276_Target_in_3 list2, No276_Target_in_3 list3, int tar) {
 
 		Node a = list.Head;
-		
-		//Sort B :- Ascending order
-		//Sort C :- Desending Order
+
+		// Sort B :- Ascending order or Merge Sort
+		// Sort C :- Desending Order or Merge Sort
 
 		while (a != null) {
 			Node b = list2.Head;
@@ -36,7 +36,7 @@ public class No276_Target_in_3 {
 					c = c.next;
 				}
 			}
-			a.next
+			a = a.next;
 		}
 		return false;
 
