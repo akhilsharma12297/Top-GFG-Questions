@@ -118,4 +118,34 @@ public class No277_Flatten_LinkedList {
 		return node;
 	}
 
+	/////////////////////////////////////////////////////////////
+
+	public static void flatten() {
+
+		Node temp = head;
+
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+
+		Node tail = temp;
+		Node downer = null;
+
+		while (temp != tail) {
+
+			if (temp.down != null) {
+
+				tail.next = temp.down;
+
+				downer = temp.down;
+
+				tail = downer;
+
+			}
+			temp = temp.next;
+		}
+
+		// mergeSort();
+
+	}
 }
