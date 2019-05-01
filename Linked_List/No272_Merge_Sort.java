@@ -1,5 +1,7 @@
 package Linked_List;
 
+import Linked_List.No282_Arbitrary_Pointer_to_Next_Higher.Node;
+
 public class No272_Merge_Sort {
 
 	class Node {
@@ -34,9 +36,7 @@ public class No272_Merge_Sort {
 		No272_Merge_Sort list1 = mergeSort(l1);
 		No272_Merge_Sort list2 = mergeSort(l2);
 
-		No272_Merge_Sort ans = Merge(list1, list2);
-
-		return ans;
+		return Merge(list1, list2);
 
 	}
 
@@ -78,17 +78,26 @@ public class No272_Merge_Sort {
 	}
 
 	private void addlast(int data) {
-		Node node = new Node();
-		node.data = data;
-		node.next = null;
-		tail.next = node;
+		if (this.size == 0) {
+			Node node = new Node();
+			node.data = data;
+			this.head = node;
+			this.tail = node;
 
-		tail = node;
+		} else {
+
+			Node node = new Node();
+			node.data = data;
+			this.tail.next = node;
+			tail = node;
+
+		}
+
 	}
 
 	private Node getNodeAt(int x) {
 		Node node = head;
-		for (int i = 0; i <= x; x++) {
+		for (int i = 0; i < x; x++) {
 			node = node.next;
 		}
 		return node;
