@@ -1,6 +1,6 @@
 package Linked_List;
 
-public class No281 {
+public class No281_Random_Pointer_LL_Copy{
 
 	class Node {
 		Node next;
@@ -9,9 +9,5 @@ public class No281 {
 
 	static Node head;
 	static int size;
-
-	public static void quickSort(No280_Quick_Sort list) {
-
-	}
 
 }
