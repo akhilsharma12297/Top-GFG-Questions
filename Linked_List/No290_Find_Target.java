@@ -15,22 +15,15 @@ public class No290_Find_Target {
 
 	public void target(int tar) {
 		Node left = head;
-		boolean result = false;
+		boolean flag = false;
 		target(head, left, tar);
-
-		if (result == false) {
-
-			System.out.println("Not Found");
-		}
 	}
 
 	public void target(Node right, Node left, int tar) {
 
-		if (right == null) {
+		if (right == null || left == null) {
 			return;
 		}
-
-		target(right.next, left, tar);
 
 		if ((right.data + left.data) == tar) {
 
@@ -38,6 +31,9 @@ public class No290_Find_Target {
 
 		}
 
+		target(right.next, left, tar);
+
+		target(right, left.next, tar);
 	}
 
 }
