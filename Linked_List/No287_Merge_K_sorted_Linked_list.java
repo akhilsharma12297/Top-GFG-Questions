@@ -2,7 +2,7 @@ package Linked_List;
 
 import java.util.PriorityQueue;
 
-public class No286_Merge_K_sorted_Linked_list {
+public class No287_Merge_K_sorted_Linked_list {
 
 	class Node {
 		Node next;
@@ -13,9 +13,9 @@ public class No286_Merge_K_sorted_Linked_list {
 
 	static int size = 0;
 
-	public No286_Merge_K_sorted_Linked_list merge(Node[] arr, int k) {
+	public No287_Merge_K_sorted_Linked_list merge(Node[] arr, int k) {
 
-		PriorityQueue<Node> pq = new PriorityQueue<No286_Merge_K_sorted_Linked_list.Node>();
+		PriorityQueue<Node> pq = new PriorityQueue<Node>();
 
 		for (int i = 0; i < k; i++) {
 
@@ -35,7 +35,7 @@ public class No286_Merge_K_sorted_Linked_list {
 
 				pq.add(temp.next);
 
-			} 
+			}
 			if (head == null) {
 
 				head = temp;
@@ -51,7 +51,7 @@ public class No286_Merge_K_sorted_Linked_list {
 
 		}
 
-		No286_Merge_K_sorted_Linked_list list = new No286_Merge_K_sorted_Linked_list();
+		No287_Merge_K_sorted_Linked_list list = new No287_Merge_K_sorted_Linked_list();
 
 		list.head = head;
 

@@ -2,7 +2,7 @@ package Linked_List;
 
 import LinkedList.LinkedList;
 
-public class No284_ZigZag_LinkedList {
+public class No285_ZigZag_LinkedList {
 
 	class Node {
 		Node next;

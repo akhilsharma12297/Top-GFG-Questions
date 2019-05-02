@@ -1,6 +1,6 @@
 package Linked_List;
 
-public class No285_Sort_Non_Abs {
+public class No286_Sort_Non_Abs {
 
 	class Node {
 		Node next;
