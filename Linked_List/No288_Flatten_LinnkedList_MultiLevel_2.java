@@ -59,6 +59,8 @@ public class No288_Flatten_LinnkedList_MultiLevel_2 {
 
 	}
 
+	
+	//depth first
 	static Node last = null;
 
 	public static Node flattenList(Node node) {
