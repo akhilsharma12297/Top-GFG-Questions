@@ -75,60 +75,64 @@ public class No312_BT_Clone_BT_W_Random_Pointers {
 
 	}
 
-	HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-	static Node ntreeroot = null;
+	Node clone_node = new Node();
 
-	public void cloner(Node ntree) {
+	public No312_BT_Clone_BT_W_Random_Pointers cloner() {
 
-		cloner(root, ntree);
+		Node og_node = this.root;
 
-		ntreeroot = ntree;
+		cloner(og_node, clone_node);
 
-		randomsetter(ntree);
+		int[] arr = { 0 };
+
+		No312_BT_Clone_BT_W_Random_Pointers clone = new No312_BT_Clone_BT_W_Random_Pointers(arr);
+
+		clone.root = clone_node;
+
+		randomsetter(clone_node);
+
+		return clone;
 	}
 
-	private void cloner(Node node, Node ntree) {
+	private void cloner(Node og_node, Node clone_node) {
 
-		if (node == null) {
-			ntree = null;
+		map.put(og_node.data, 69);
+
+		clone_node.data = og_node.data;
+
+		if (og_node.left != null) {
+			Node ln = new Node();
+			clone_node.left = ln;
+			cloner(og_node.left, ln);
+		}
+
+		if (og_node.right != null) {
+			Node rn = new Node();
+			clone_node.right = rn;
+			cloner(og_node.right, rn);
+		}
+
+	}
+
+	private void randomsetter(Node clone_node) {
+
+		if (clone_node == null) {
 			return;
 		}
 
-		map.put(node.data, node.Random.data);
+//		clone_node.Random = findNode(map.get(clone_node.data));
 
-		ntree.data = node.data;
+		randomsetter(clone_node.left);
 
-		Node ln = new Node();
-		ntree.left = ln;
-		cloner(node.left, ln);
-
-		Node rn = new Node();
-		ntree.right = rn;
-		cloner(node.right, rn);
-
-	}
-
-	private void randomsetter(Node ntree) {
-
-		if (ntree == null) {
-			return;
-		}
-
-		Node random = new Node();
-
-		random = findNode(ntreeroot, (findNode(ntree.data).data));
-
-		ntree.Random = random;
-
-		randomsetter(ntree.left);
-		randomsetter(ntree.right);
+		randomsetter(clone_node.right);
 
 	}
 
 	public Node findNode(int data) {
 
-		return findNode(root, data);
+		return findNode(clone_node, data);
 	}
 
 	private Node findNode(Node node, int data) {
@@ -161,11 +165,10 @@ public class No312_BT_Clone_BT_W_Random_Pointers {
 
 		bt.display();
 
-		int[] arr2 = { 0 };
+		No312_BT_Clone_BT_W_Random_Pointers clone = bt.cloner();
 
-		No312_BT_Clone_BT_W_Random_Pointers newtree = new No312_BT_Clone_BT_W_Random_Pointers(arr2);
-
-		bt.cloner(newtree.root);
+		System.out.println();
+		clone.display();
 
 	}
 
