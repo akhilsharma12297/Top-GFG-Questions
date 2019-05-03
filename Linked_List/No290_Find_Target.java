@@ -1,7 +1,5 @@
 package Linked_List;
 
-import Linked_List.No275_Sum_The_LL.Node;
-
 public class No290_Find_Target {
 
 	class Node {
@@ -18,7 +16,7 @@ public class No290_Find_Target {
 		boolean flag = false;
 		target(head, left, tar);
 	}
-s
+
 	static boolean right_flag = false;
 
 	public void target(Node right, Node left, int tar) {
@@ -34,11 +32,11 @@ s
 		}
 
 		if (right_flag == false) {
-			
+
 			target(right.next, left, tar);
-		
+
 		}
-		
+
 		right_flag = true;
 		target(right, left.next, tar);
 	}
