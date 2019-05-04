@@ -2,7 +2,7 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-public class No314_InOrder_NoRecursion {
+public class No314_InOrder_NoRecursion_W_Stack {
 
 	class Node {
 		int data;
@@ -14,7 +14,7 @@ public class No314_InOrder_NoRecursion {
 
 	public static void func() {
 
-		Stack<Node> stack = new Stack<No314_InOrder_NoRecursion.Node>();
+		Stack<Node> stack = new Stack<No314_InOrder_NoRecursion_W_Stack.Node>();
 
 		Node curr = root;
 
@@ -32,11 +32,6 @@ public class No314_InOrder_NoRecursion {
 
 			curr = curr.right;
 		}
-
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

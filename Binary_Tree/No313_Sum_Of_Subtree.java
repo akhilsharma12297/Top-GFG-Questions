@@ -12,54 +12,34 @@ public class No313_Sum_Of_Subtree {
 
 	}
 
-	class INT {
-		int v;
+	static Node root;
 
-		INT(int a) {
-			v = a;
-		}
+	static int ctr = 0;
+
+	public void subTreeSumCtr(int x) {
+
+		subTreeSumCtr(root, x);
+
+		System.out.println(ctr);
+
 	}
 
-	public void subTreeSum() {
-
-	}
-
-	private int SubtreeHelper(Node node, INT ctr, int x) {
+	public int subTreeSumCtr(Node node, int x) {
 
 		if (node == null) {
 			return 0;
 		}
 
-		int ls = SubtreeHelper(node.left, ctr, x);
-		int rs = SubtreeHelper(node.right, ctr, x);
-		if ((ls + rs + node.data) == x) {
-			ctr.v++;
+		int ls = subTreeSumCtr(node.left, x);
+		int rs = subTreeSumCtr(node.right, x);
+
+		int sum = ls + rs + node.data;
+
+		if (sum == x) {
+			ctr++;
 		}
 
-		return ctr.v;
+		return sum;
 
 	}
-
-	private int Subtree(Node node, int x) {
-
-		if (node == null) {
-			return 0;
-		}
-
-		INT ctr = new INT(0);
-		int ls = SubtreeHelper(node.left, ctr, x);
-		int rs = SubtreeHelper(node.right, ctr, x);
-		if ((ls + rs + node.data) == x) {
-			ctr.v++;
-		}
-
-		return ctr.v;
-
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
