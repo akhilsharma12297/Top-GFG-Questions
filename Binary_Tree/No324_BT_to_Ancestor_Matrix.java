@@ -131,10 +131,9 @@ public class No324_BT_to_Ancestor_Matrix {
 		System.out.println();
 
 		bt.BT_To_Martix();
-		
+
 		System.out.println();
 
-		
 	}
 
 }
