@@ -81,8 +81,8 @@ public class No324_BT_to_Ancestor_Matrix {
 
 		BT_To_Martix(root, matrix);
 
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
 				System.out.print(matrix[i][j] + " ");
 			}
 			System.out.println();
@@ -107,7 +107,7 @@ public class No324_BT_to_Ancestor_Matrix {
 
 		if (node.right != null) {
 
-			matrix[node.data][node.left.data] = 1;
+			matrix[node.data][node.right.data] = 1;
 
 		}
 	}
