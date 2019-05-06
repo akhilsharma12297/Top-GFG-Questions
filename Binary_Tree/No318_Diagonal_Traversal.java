@@ -88,8 +88,6 @@ public class No318_Diagonal_Traversal {
 				temp = temp.right;
 
 			}
-			
-			System.out.println();
 			home = home.left;
 
 			temp = home;
