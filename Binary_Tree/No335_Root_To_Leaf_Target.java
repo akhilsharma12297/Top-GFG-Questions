@@ -71,9 +71,9 @@ public class No335_Root_To_Leaf_Target {
 
 	}
 
-	public void RootToNodeTarget(int tar) {
+	public boolean RootToNodeTarget(int tar) {
 
-		RootToNodeTarget(root, tar, 0);
+		return RootToNodeTarget(root, tar, 0);
 	}
 
 	private boolean RootToNodeTarget(Node node, int tar, int sum) {
@@ -103,7 +103,7 @@ public class No335_Root_To_Leaf_Target {
 
 		System.out.println();
 
-		bt.RootToNodeTarget(87);
+		System.out.println(bt.RootToNodeTarget(212));
 
 	}
 }
