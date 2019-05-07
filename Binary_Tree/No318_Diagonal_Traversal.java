@@ -2,8 +2,6 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-import Binary_Tree.No321_LevelOrder_Traversal.Node;
-
 public class No318_Diagonal_Traversal {
 
 	class Node {
