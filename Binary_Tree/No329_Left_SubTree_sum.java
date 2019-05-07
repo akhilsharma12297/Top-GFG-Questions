@@ -2,8 +2,6 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-import Binary_Tree.No320_Boundary_Traversal.Node;
-
 public class No329_Left_SubTree_sum {
 
 	class Node {

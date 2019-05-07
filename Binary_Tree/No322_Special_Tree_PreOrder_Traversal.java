@@ -1,7 +1,5 @@
 package Binary_Tree;
 
-import java.util.Stack;
-
 public class No322_Special_Tree_PreOrder_Traversal {
 	class Node {
 		int data;
@@ -15,8 +13,6 @@ public class No322_Special_Tree_PreOrder_Traversal {
 	static int myidx = 0;
 
 	public void SpecialTree(int[] Pre_values, char[] Pre_nodes) {
-
-		int idx = 0;
 
 		SpecialTreehelper(Pre_values, Pre_nodes, myidx, Pre_values.length, root);
 

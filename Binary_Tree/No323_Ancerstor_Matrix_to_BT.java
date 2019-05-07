@@ -1,11 +1,7 @@
 package Binary_Tree;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
-
-import Binary_Tree.No322_Special_Tree_PreOrder_Traversal.Node;
 
 public class No323_Ancerstor_Matrix_to_BT {
 

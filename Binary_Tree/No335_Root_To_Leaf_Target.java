@@ -2,8 +2,7 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-public class No328_Sum_Binary_Tree {
-
+public class No335_Root_To_Leaf_Target {
 	class Node {
 		Node left;
 		Node right;
@@ -11,11 +10,11 @@ public class No328_Sum_Binary_Tree {
 	}
 
 	static Node root;
-	static int size = 0;
 
-	public No328_Sum_Binary_Tree(int[] arr) {
+	static int size;
 
-		Stack<Node> stack = new Stack<No328_Sum_Binary_Tree.Node>();
+	public No335_Root_To_Leaf_Target(int[] arr) {
+		Stack<Node> stack = new Stack<No335_Root_To_Leaf_Target.Node>();
 
 		for (int val : arr) {
 
@@ -72,38 +71,39 @@ public class No328_Sum_Binary_Tree {
 
 	}
 
-	private int sumTree(Node node) {
+	public void RootToNodeTarget(int tar) {
 
-		if (node == null) {
-			return 0;
-		}
-
-		int val = node.data;
-
-		node.data = sumTree(node.left) + sumTree(node.right);
-
-		return val + node.data;
-
+		RootToNodeTarget(root, tar, 0);
 	}
 
-	public void sumTree() {
-		sumTree(root);
+	private boolean RootToNodeTarget(Node node, int tar, int sum) {
+
+		if (node == null) {
+			if (tar == sum) {
+				return true;
+			}
+			return false;
+		}
+
+		if (RootToNodeTarget(node.left, tar, sum + node.data) || RootToNodeTarget(node.right, tar, sum + node.data)) {
+			return true;
+		}
+
+		return false;
+
 	}
 
 	public static void main(String[] args) {
 
 		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
 
-		No328_Sum_Binary_Tree bt = new No328_Sum_Binary_Tree(arr);
+		No335_Root_To_Leaf_Target bt = new No335_Root_To_Leaf_Target(arr);
 
 		bt.display();
 
 		System.out.println();
 
-		bt.sumTree();
+		bt.RootToNodeTarget(87);
 
-		System.out.println();
-
-		bt.display();
 	}
 }

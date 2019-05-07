@@ -3,8 +3,6 @@ package Binary_Tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import Binary_Tree.No330_Binary_Tree_To_Circular_LL.Node;
-
 public class No334_Common_Nodes_LCA {
 	class Node {
 		Node left;

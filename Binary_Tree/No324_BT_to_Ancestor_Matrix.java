@@ -2,8 +2,6 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-import Binary_Tree.No320_Boundary_Traversal.Node;
-
 public class No324_BT_to_Ancestor_Matrix {
 
 	class Node {
