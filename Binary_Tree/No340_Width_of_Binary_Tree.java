@@ -1,20 +1,22 @@
 package Binary_Tree;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
-public class No339_Foldable_Binary_Tree {
+public class No340_Width_of_Binary_Tree {
 
 	class Node {
 		Node left;
 		Node right;
 		int data;
+
 	}
 
-	static int size;
 	static Node root;
+	static int size = 0;
 
-	public No339_Foldable_Binary_Tree(int[] arr) {
-		Stack<Node> stack = new Stack<No339_Foldable_Binary_Tree.Node>();
+	public No340_Width_of_Binary_Tree(int[] arr) {
+		Stack<Node> stack = new Stack<No340_Width_of_Binary_Tree.Node>();
 
 		for (int val : arr) {
 
@@ -51,7 +53,7 @@ public class No339_Foldable_Binary_Tree {
 
 	}
 
-	private void display(Node node) {	
+	private void display(Node node) {
 
 		if (node == null) {
 			return;
@@ -71,44 +73,45 @@ public class No339_Foldable_Binary_Tree {
 
 	}
 
-	public boolean isfoldable() {
+	public int widthBetter() {
 
-		return isfoldable(root, root, 0, 0);
+		LinkedList<Node> queue = new LinkedList<No340_Width_of_Binary_Tree.Node>();
 
-	}
+		int max_size = 0;
+		queue.addLast(root);
 
-	private boolean isfoldable(Node left, Node right, int vl, int vr) {
+		while (queue.size() > 0) {
 
-		if (left == null || right == null) {
-			return true;
+			if (max_size < queue.size()) {
+				max_size = queue.size();
+			}
+
+			Node temp = queue.removeFirst();
+
+			if (temp.left != null) {
+				queue.addLast(temp.left);
+			}
+
+			if (temp.right != null) {
+				queue.addLast(temp.right);
+			}
+
 		}
+		return max_size;
 
-		if (isfoldable(left.left, right.right, vl - 1, vr + 1) == false) {
-			return false;
-		}
-
-		if (isfoldable(left.right, right.left, vl + 1, vr - 1) == false) {
-			return false;
-		}
-
-		if (Math.abs(vl) == Math.abs(vr)) {
-			return true;
-		}
-
-		return false;
 	}
 
 	public static void main(String[] args) {
 
 		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
 
-		No339_Foldable_Binary_Tree bt = new No339_Foldable_Binary_Tree(arr);
+		No340_Width_of_Binary_Tree bt = new No340_Width_of_Binary_Tree(arr);
 
 		bt.display();
 
 		System.out.println();
 
-		System.out.println(bt.isfoldable());
+		System.out.println(bt.widthBetter());
 
 		System.out.println();
 
