@@ -74,34 +74,35 @@ public class No344_Right_Node_of_key {
 
 	}
 
-	public void RightNode(int key) {
+	public void RightNoder(int key) {
+		RightNoderHelper(root, key, -1);
 
-		LinkedList<Node> queue = new LinkedList<No344_Right_Node_of_key.Node>();
-
-		queue.addLast(root);
-
-		while (queue.size() > 0) {
-
-			Node node = queue.removeLast();
-
-			if (node.data == key) {
-				if (queue.size() == 0) {
-					System.out.println("Null");
-				} else {
-					System.out.println(queue.peek().data);
-				}
-				break;
-			}
-
-			if (node.left != null) {
-				queue.addLast(node.left);
-			}
-
-			if (node.right != null) {
-				queue.addLast(node.right);
-			}
-
+		if (search == true) {
+			System.out.println("Null");
 		}
+	}
+
+	static int Found_level = 0;
+	static boolean search = false;
+
+	private void RightNoderHelper(Node node, int key, int level) {
+
+		if (node == null) {
+			return;
+		}
+
+		if (search && Found_level == level) {
+			System.out.println(node.data);
+			search = false;
+		}
+
+		if (node.data == key) {
+			search = true;
+			Found_level = level;
+		}
+
+		RightNoderHelper(node.left, key, level + 1);
+		RightNoderHelper(node.right, key, level + 1);
 
 	}
 
@@ -115,7 +116,7 @@ public class No344_Right_Node_of_key {
 
 		System.out.println();
 
-		bt.RightNode(5000);
+		bt.RightNoder(50);
 
 	}
 
