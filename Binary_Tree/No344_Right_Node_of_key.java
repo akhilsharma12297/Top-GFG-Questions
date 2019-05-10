@@ -1,7 +1,5 @@
 package Binary_Tree;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class No344_Right_Node_of_key {
@@ -74,7 +72,7 @@ public class No344_Right_Node_of_key {
 
 	}
 
-	public void RightNoder(int key) {
+	public void RightNode(int key) {
 		RightNoderHelper(root, key, -1);
 
 		if (search == true) {
@@ -116,7 +114,7 @@ public class No344_Right_Node_of_key {
 
 		System.out.println();
 
-		bt.RightNoder(50);
+		bt.RightNode(12);
 
 	}
 
