@@ -3,7 +3,7 @@ package Binary_Tree;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class No318_Diagonal_Traversal {
+public class No352_Diagonal_Sum {
 
 	class Node {
 		int data;
@@ -14,9 +14,9 @@ public class No318_Diagonal_Traversal {
 	static Node root;
 	static int size;
 
-	public No318_Diagonal_Traversal(int[] arr) {
+	public No352_Diagonal_Sum(int[] arr) {
 
-		Stack<Node> stack = new Stack<No318_Diagonal_Traversal.Node>();
+		Stack<Node> stack = new Stack<No352_Diagonal_Sum.Node>();
 
 		for (int val : arr) {
 
@@ -73,7 +73,7 @@ public class No318_Diagonal_Traversal {
 
 	}
 
-	static HashMap<Integer, String> map = new HashMap<Integer, String>();
+	static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 	public void Diagonal_Traversal() {
 
@@ -89,12 +89,12 @@ public class No318_Diagonal_Traversal {
 
 		if (!map.containsKey(dc)) {
 
-			map.put(dc, node.data + " ");
+			map.put(dc, node.data);
 
 		} else {
-			String temp = map.get(dc);
+			int temp = map.get(dc);
 
-			temp += node.data + " ";
+			temp += node.data;
 
 			map.put(dc, temp);
 		}
@@ -105,11 +105,10 @@ public class No318_Diagonal_Traversal {
 
 	public static void main(String[] args) {
 
-		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
+		 int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
 
-		// int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70,
-		// -1, -1, 87, -1, -1, -1 };
-		No318_Diagonal_Traversal bt = new No318_Diagonal_Traversal(arr);
+	//	int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70, -1, -1, 87, -1, -1, -1 };
+		No352_Diagonal_Sum bt = new No352_Diagonal_Sum(arr);
 
 		bt.display();
 

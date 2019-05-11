@@ -117,10 +117,11 @@ public class No351_Distance_BTW_2_Nodes {
 		int sizej = listj.size() - 1;
 
 		int lca = 0;
-		while (sizei > 0 || sizej > 0) {
+		while (sizei >= 0 && sizej >= 0) {
 
 			if (listi.get(sizei) != listj.get(sizej)) {
 				lca = listi.get(sizei + 1);
+				break;
 			}
 
 			sizei--;
@@ -145,7 +146,7 @@ public class No351_Distance_BTW_2_Nodes {
 
 		System.out.println();
 
-		System.out.println(bt.distanceBtWNodes(25, 87));
+		System.out.println(bt.distanceBtWNodes(25, 75));
 
 		System.out.println();
 
