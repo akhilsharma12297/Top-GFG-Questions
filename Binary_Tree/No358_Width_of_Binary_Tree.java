@@ -2,7 +2,7 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-public class No356_Max_Sum_Path_across_Tree {
+public class No358_Width_of_Binary_Tree {
 
 	class Node {
 		int data;
@@ -13,9 +13,9 @@ public class No356_Max_Sum_Path_across_Tree {
 	static Node root;
 	static int size;
 
-	public No356_Max_Sum_Path_across_Tree(int[] arr) {
+	public No358_Width_of_Binary_Tree(int[] arr) {
 
-		Stack<Node> stack = new Stack<No356_Max_Sum_Path_across_Tree.Node>();
+		Stack<Node> stack = new Stack<No358_Width_of_Binary_Tree.Node>();
 
 		for (int val : arr) {
 
@@ -72,15 +72,48 @@ public class No356_Max_Sum_Path_across_Tree {
 
 	}
 
+	public int width() {
+
+		width(root, 0);
+
+		return (1 + Math.abs(min) + max);
+
+	}
+
+	static int max = 0;
+	static int min = 0;
+
+	private void width(Node node, int vc) {
+
+		if (node == null) {
+			return;
+		}
+
+		if (vc > max) {
+			max = vc;
+		}
+
+		if (min > vc) {
+			min = vc;
+		}
+
+		width(node.left, vc - 1);
+		width(node.right, vc + 1);
+
+	}
+
 	public static void main(String[] args) {
 
-		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
+		// int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
 
-		// int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70,
-		// -1, -1, 87, -1, -1, -1 };
-		No356_Max_Sum_Path_across_Tree bt = new No356_Max_Sum_Path_across_Tree(arr);
+		int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70, -1, -1, 87, -1, -1, -1 };
+		No358_Width_of_Binary_Tree bt = new No358_Width_of_Binary_Tree(arr);
 
 		bt.display();
+
+		System.out.println();
+
+		System.out.println(bt.width());
 
 		System.out.println();
 
