@@ -73,48 +73,6 @@ public class No356_Max_Sum_Path_across_Tree {
 
 	}
 
-	public void max_path() {
-
-		max_path(root.left, 0, " ");
-		String result = CurrStr;
-		int sum = max;
-
-		System.out.println(result + " " + sum);
-
-		System.out.println();
-		System.out.println();
-
-		max = 0;
-		CurrStr = new String();
-		max_path(root.right, 0, " ");
-
-		System.out.println(max + " " + CurrStr);
-
-		result += root.data + " , " + CurrStr;
-		sum += max + root.data;
-
-		System.out.println(result + " : - " + sum);
-
-	}
-
-	static int max = 0;
-	static String CurrStr;
-
-	private void max_path(Node node, int sum, String str) {
-		if (node == null) {
-			return;
-		}
-
-		max_path(node.left, sum + node.data, str + node.data + " , ");
-		max_path(node.right, sum + node.data, str + node.data + " , ");
-
-		if (sum > max) {
-			max = sum;
-			CurrStr = str;
-		}
-
-	}
-
 	public static void main(String[] args) {
 
 		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
@@ -126,8 +84,6 @@ public class No356_Max_Sum_Path_across_Tree {
 		bt.display();
 
 		System.out.println();
-
-		bt.max_path();
 
 	}
 
