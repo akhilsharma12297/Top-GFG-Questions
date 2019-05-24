@@ -2,7 +2,7 @@ package Binary_Tree;
 
 import java.util.Stack;
 
-public class No358_Width_of_Binary_Tree {
+public class No356_Max_InTree_sum_Path {
 
 	class Node {
 		int data;
@@ -13,9 +13,9 @@ public class No358_Width_of_Binary_Tree {
 	static Node root;
 	static int size;
 
-	public No358_Width_of_Binary_Tree(int[] arr) {
+	public No356_Max_InTree_sum_Path(int[] arr) {
 
-		Stack<Node> stack = new Stack<No358_Width_of_Binary_Tree.Node>();
+		Stack<Node> stack = new Stack<No356_Max_InTree_sum_Path.Node>();
 
 		for (int val : arr) {
 
@@ -72,33 +72,29 @@ public class No358_Width_of_Binary_Tree {
 
 	}
 
-	public int width() {
+	public void func() {
 
-		width(root, 0);
-
-		return (1 + Math.abs(min) + max);
+		System.out.println(func(root));
 
 	}
 
-	static int max = 0;
-	static int min = 0;
+	static int sum;
 
-	private void width(Node node, int vc) {
-
+	public int func(Node node) {
 		if (node == null) {
-			return;
+			return 0;
 		}
 
-		if (vc > max) {
-			max = vc;
-		}
+		int ls = func(node.left);
+		int rs = func(node.right);
 
-		if (min > vc) {
-			min = vc;
-		}
+		int max_single = Math.max(Math.max(ls, rs), node.data);
 
-		width(node.left, vc - 1);
-		width(node.right, vc + 1);
+		int max_top = Math.max(max_single, ls + rs + node.data);
+
+		sum = Math.max(sum, max_top);
+
+		return sum;
 
 	}
 
@@ -108,15 +104,13 @@ public class No358_Width_of_Binary_Tree {
 
 		// int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70,
 		// -1, -1, 87, -1, -1, -1 };
-		No358_Width_of_Binary_Tree bt = new No358_Width_of_Binary_Tree(arr);
+		No356_Max_InTree_sum_Path bt = new No356_Max_InTree_sum_Path(arr);
 
 		bt.display();
 
 		System.out.println();
 
-		System.out.println(bt.width());
-
-		System.out.println();
+		bt.func();
 
 	}
 

@@ -75,17 +75,6 @@ public class No319_Vertical_Order_Traversal {
 
 	}
 
-	public void verticalOrderTraversal() {
-
-		setminmax(root, 0);
-
-		for (int i = min; i <= max; i++) {
-
-			verticalOrderTraversal(root, 0, i);
-			System.out.println();
-		}
-	}
-
 	private void setminmax(Node root, int vf) {
 
 		if (root == null) {
@@ -98,6 +87,17 @@ public class No319_Vertical_Order_Traversal {
 		setminmax(root.left, vf - 1);
 		setminmax(root.right, vf + 1);
 
+	}
+
+	public void verticalOrderTraversal() {
+
+		setminmax(root, 0);
+
+		for (int i = min; i <= max; i++) {
+
+			verticalOrderTraversal(root, 0, i);
+			System.out.println();
+		}
 	}
 
 	private void verticalOrderTraversal(Node node, int vf, int i) {

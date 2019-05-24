@@ -1,6 +1,5 @@
 package Binary_Tree;
 
-import java.util.HashMap;
 import java.util.Stack;
 
 public class No355_Remove_Leafs_less_than_K {
@@ -73,7 +72,9 @@ public class No355_Remove_Leafs_less_than_K {
 
 	}
 
-	public void remove() {
+	public void remove(int k) {
+
+		remove(root, 0, k);
 
 	}
 
@@ -105,7 +106,7 @@ public class No355_Remove_Leafs_less_than_K {
 
 		System.out.println();
 
-		bt.remove();
+		bt.remove(2);
 
 	}
 
