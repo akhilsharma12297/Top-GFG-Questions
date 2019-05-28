@@ -82,6 +82,6 @@ public class No275_Sum_The_LL {
 		String ans = String.valueOf(Integer.parseInt(str) + Integer.parseInt(str2));
 
 		System.out.println(ans);
-
+		
 	}
 }

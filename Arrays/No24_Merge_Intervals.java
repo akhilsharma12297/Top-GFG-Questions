@@ -1,7 +1,5 @@
 package Arrays;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.Stack;
 
 //https://www.geeksforgeeks.org/merging-intervals/
@@ -20,9 +18,9 @@ public class No24_Merge_Intervals {
 	public static void main(String[] args) {
 
 		Interval arr[] = new Interval[4];
-		arr[0] = new Interval(1, 9);
+		arr[0] = new Interval(1, 2);
 		arr[3] = new Interval(6, 8);
-		arr[1] = new Interval(2, 4);
+		arr[1] = new Interval(3, 4);
 		arr[2] = new Interval(4, 7);
 
 		func(arr);
@@ -35,8 +33,8 @@ public class No24_Merge_Intervals {
 		stack.add((arr[0]));
 
 		int x = 0;
-		while (x < arr.length) {
 
+		while (x < arr.length) {
 
 			if ((stack.peek()).end > arr[x].start) {
 

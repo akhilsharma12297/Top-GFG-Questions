@@ -74,36 +74,46 @@ public class No356_Max_InTree_sum_Path {
 
 	public void func() {
 
-		System.out.println(func(root));
+		System.out.println(func(root.left) + func(root.right) + root.data);
+
+		System.out.println(path);
 
 	}
 
 	static int sum;
+	static String path = "";
 
 	public int func(Node node) {
 		if (node == null) {
 			return 0;
 		}
 
+		if (node.left == null && node.right == null) {
+			return node.data;
+		}
+
 		int ls = func(node.left);
 		int rs = func(node.right);
 
-		int max_single = Math.max(Math.max(ls, rs), node.data);
+		int mymax; // = Math.max(ls, rs) + node.data;
 
-		int max_top = Math.max(max_single, ls + rs + node.data);
+		if (ls > rs) {
+			path += " " + ls + " " + node.data;
+			mymax = ls + node.data;
+		} else {
+			path += " " + rs + " " + node.data;
+			mymax = rs + node.data;
+		}
 
-		sum = Math.max(sum, max_top);
-
-		return sum;
+		return mymax;
 
 	}
 
 	public static void main(String[] args) {
 
-		int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
+		// int[] arr = { 50, 25, 12, -1, 73, -1, -1, 75, 62, -1, 87, -1, -1, -1 };
 
-		// int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70,
-		// -1, -1, 87, -1, -1, -1 };
+		int[] arr = { 50, 25, 12, -1, 37, 30, -1, 40, -1, -1, -1, 75, 62, 60, -1, 70, -1, -1, 87, -1, -1, -1 };
 		No356_Max_InTree_sum_Path bt = new No356_Max_InTree_sum_Path(arr);
 
 		bt.display();

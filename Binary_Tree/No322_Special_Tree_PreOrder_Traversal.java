@@ -32,7 +32,7 @@ public class No322_Special_Tree_PreOrder_Traversal {
 
 			node.left = SpecialTreehelper(pre_values, pre_nodes, myidx, length, node.left);
 
-			node.left = SpecialTreehelper(pre_values, pre_nodes, myidx, length, node.left);
+			node.right = SpecialTreehelper(pre_values, pre_nodes, myidx, length, node.right);
 		}
 		return node;
 	}
