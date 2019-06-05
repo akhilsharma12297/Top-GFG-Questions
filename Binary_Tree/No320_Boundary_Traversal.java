@@ -134,14 +134,17 @@ public class No320_Boundary_Traversal {
 
 	private void printLeave(Node node) {
 
-		if (node != null) {
-			printLeave(node.left);
-
-			if (node.left == null && node.right == null) {
-				System.out.println(node.data + " ");
-			}
-			printLeave(node.right);
+		if (node == null) {
+			return;
 		}
+		if (node.left == null && node.right == null) {
+			System.out.println(node.data + " ");
+			return;
+		}
+
+		printLeave(node.left);
+
+		printLeave(node.right);
 
 	}
 
