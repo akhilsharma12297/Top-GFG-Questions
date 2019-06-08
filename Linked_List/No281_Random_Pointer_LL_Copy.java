@@ -20,6 +20,7 @@ public class No281_Random_Pointer_LL_Copy {
 
 			Node temp = new Node();
 			temp.data = curr.data;
+
 			temp.next = curr.next;
 			curr.next = temp;
 
@@ -31,9 +32,10 @@ public class No281_Random_Pointer_LL_Copy {
 
 		while (curr != null) {
 
-			curr.next.random = curr.random.next;
+			if (curr.next != null)
+				curr.next.random = (curr.random != null) ? curr.random.next : curr.random;
 
-			curr = curr.next.next;
+			curr = (curr.next != null) ? curr.next.next : curr.next;
 
 		}
 
@@ -46,9 +48,12 @@ public class No281_Random_Pointer_LL_Copy {
 
 		while (curr != null && copy != null) {
 
-			curr.next = curr.next.next;
+			curr.next = (curr.next != null) ? curr.next.next : curr.next;
 
-			copy.next = copy.next.next;
+			copy.next = (copy.next != null) ? copy.next.next : copy.next;
+			
+			curr = curr.next;
+			copy = copy.next;
 
 		}
 
