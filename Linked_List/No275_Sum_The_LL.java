@@ -11,67 +11,87 @@ public class No275_Sum_The_LL {
 	static Node Head;
 	static Node tail;
 
-	public static void add_them(No275_Sum_The_LL list, No275_Sum_The_LL list2) {
+	public Node add_them(No275_Sum_The_LL list, No275_Sum_The_LL list2) {
 
-		Node temp = list.Head;
-
-		String str = new String();
-
-		while (temp != null) {
-
-			str += temp.data;
-
-			temp = temp.next;
-
-		}
-
+		Node temp1 = list.Head;
 		Node temp2 = list2.Head;
 
-		String str2 = new String();
+		temp1 = reverseList(temp1);
+		temp2 = reverseList(temp2);
 
-		while (temp2 != null) {
+		Node head = null;
+		Node prev = null;
+		int sum = 0;
+		int carry = 0;
 
-			str2 += temp2.data;
+		while (temp1 != null || temp2 != null) {
 
-			temp2 = temp2.next;
+			int ld = 0;
+			int rd = 0;
+
+			if (temp1 != null) {
+				ld = temp1.data;
+			}
+
+			if (temp2 != null) {
+				rd = temp2.data;
+			}
+
+			sum = ld + rd + carry;
+
+			carry = sum / 10;
+
+			sum = sum % 10;
+
+			if (head == null) {
+				Node node = new Node();
+				node.data = sum;
+
+				head = node;
+				tail = node;
+			} else {
+
+				Node node = new Node();
+				node.data = sum;
+				tail.next = node;
+				tail = node;
+
+			}
+			if (temp1 != null) {
+				temp1 = temp1.next;
+			}
+
+			if (temp2 != null) {
+				temp2 = temp2.next;
+			}
+
+			if (carry != 0) {
+				Node node = new Node();
+				node.data = carry;
+				prev.next = node;
+			}
 
 		}
 
-		String ans = String.valueOf(Integer.parseInt(str) + Integer.parseInt(str2));
-
-		No275_Sum_The_LL result = new No275_Sum_The_LL();
-
-		for (int i = 0; i < ans.length(); i++) {
-
-			result.addLast(ans.charAt(i));
-
-		}
+		head = reverseList(head);
+		return head;
 
 	}
 
-	public void addLast(int data) {
+	private static Node reverseList(Node node) {
 
-		if (size == 0) {
-			Node node = new Node();
-			node.data = data;
-			Head = node;
-			tail = node;
+		Node prev = null;
+		Node curr = node;
 
-			size++;
+		while (curr != null) {
+			Node mynext = curr.next;
+
+			curr.next = prev;
+			prev = curr;
+			curr = curr.next;
 		}
 
-		Node temp = new Node();
-
-		size++;
-
-		temp.data = data;
-
-		temp.next = null;
-
-		tail.next = temp;
-
-		tail = temp;
-
+		return prev;
 	}
 
 	public static void main(String[] args) {
@@ -82,6 +102,6 @@ public class No275_Sum_The_LL {
 		String ans = String.valueOf(Integer.parseInt(str) + Integer.parseInt(str2));
 
 		System.out.println(ans);
-		
+
 	}
 }
