@@ -20,8 +20,7 @@ public class No364_BST_from_PreOrder {
 
 		No364_BST_from_PreOrder bst = new No364_BST_from_PreOrder();
 
-		bst.func(pres);
-		
+		// bst.func();
 
 	}
 }
