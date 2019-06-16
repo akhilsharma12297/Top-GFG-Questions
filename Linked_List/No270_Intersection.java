@@ -70,7 +70,7 @@ public class No270_Intersection {
 	}
 
 	// Method-3
-	// Gives all the nodes int the intersection
+	// Gives all the nodes in the intersection
 	public static Node findIntersection(Node n1, Node n2) {
 		HashMap<Integer, Node> map = new HashMap<>();
 		HashSet<Integer> st = new HashSet<>();
