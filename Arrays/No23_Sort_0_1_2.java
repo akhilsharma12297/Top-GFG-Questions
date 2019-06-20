@@ -2,7 +2,7 @@ package Arrays;
 
 //https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
 
-public class No23_Sort_0_1 {
+public class No23_Sort_0_1_2 {
 
 	public static void main(String[] args) {
 
@@ -12,8 +12,6 @@ public class No23_Sort_0_1 {
 		for (int x : arr) {
 			System.out.print(x + "  ");
 		}
-		// TODO Auto-generated method stub
-
 	}
 
 	public static void func(int[] arr) {

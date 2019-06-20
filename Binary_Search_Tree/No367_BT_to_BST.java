@@ -23,11 +23,11 @@ public class No367_BT_to_BST {
 
 		Collections.sort(arr);
 
-		arr_to_BT(root, arr, 0, arr.size());
+		arr_to_BST(root, arr, 0, arr.size());
 
 	}
 
-	private void arr_to_BT(Node node, ArrayList<Integer> arr, int start, int end) {
+	private void arr_to_BST(Node node, ArrayList<Integer> arr, int start, int end) {
 
 		if (node == null) {
 			return;
@@ -39,12 +39,12 @@ public class No367_BT_to_BST {
 
 		if (node.left != null) {
 
-			arr_to_BT(node.left, arr, start, ((start + end) / 2) - 1);
+			arr_to_BST(node.left, arr, start, ((start + end) / 2) - 1);
 		}
 
 		if (node.left != null) {
 
-			arr_to_BT(node.left, arr, ((start + end) / 2) + 1, end);
+			arr_to_BST(node.left, arr, ((start + end) / 2) + 1, end);
 		}
 	}
 

@@ -131,12 +131,9 @@ public class No319_Vertical_Order_Traversal {
 		}
 
 		if (map.containsKey(vf)) {
-
 			map.put(vf, map.get(vf) + node.data + " ");
 		} else {
-
 			map.put(vf, node.data + " ");
-
 		}
 
 		verticalOrderMap(node.left, vf - 1);

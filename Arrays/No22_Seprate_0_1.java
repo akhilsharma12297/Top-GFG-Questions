@@ -2,8 +2,6 @@ package Arrays;
 
 //https://www.geeksforgeeks.org/segregate-0s-and-1s-in-an-array-by-traversing-array-once/
 
-import java.util.Scanner;
-
 public class No22_Seprate_0_1 {
 
 	public static void main(String[] args) {
