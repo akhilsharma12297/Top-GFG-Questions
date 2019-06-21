@@ -9,32 +9,34 @@ public class No15_Max_Value_Rotation {
 
 		int arr[] = { 8, 3, 1, 2 };
 
-		System.out.println(func(arr));
+		System.out.println(maxSum(arr, arr.length));
 
 	}
 
-	public static int func(int[] arr) {
+	static int maxSum(int arr[], int n) {
+		
+		int sum = 0;
+		
+		int i;
+		
+		int pivot = findPivot(arr, n);
 
-		int n = arr.length;
+		int diff = n - 1 - pivot;
 
-		int res = Integer.MIN_VALUE;
-
-		for (int i = 0; i < arr.length; i++) {
-			int sum = 0;
-
-			for (int j = 0; j < arr.length; j++) {
-
-				int index = (i + j) % n;
-				sum += j * arr[index];
-
-			}
-
-			res = Math.max(res, sum);
-
+		for (i = 0; i < n; i++) {
+			sum = sum + ((i + diff) % n) * arr[i];
 		}
+		
+		return sum;
+	}
 
-		return res;
-
+	static int findPivot(int arr[], int n) {
+		int i;
+		for (i = 0; i < n; i++) {
+			if (arr[i] > arr[(i + 1) % n])
+				return i;
+		}
+		return 0;
 	}
 
 }

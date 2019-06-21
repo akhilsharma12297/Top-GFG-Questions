@@ -41,7 +41,7 @@ public class No12_K_smallest_pair {
 			}
 
 		}
- 
+
 		int i = 1;
 		for (Map.Entry<Integer, Node> data : map.entrySet()) {
 
