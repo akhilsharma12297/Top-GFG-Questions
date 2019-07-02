@@ -19,7 +19,7 @@ public class No2_Find_Sum_subarray {
 		int sub = 0;
 		while (mysum != sum) {
 
-			if (sum > mysum) {
+			if (sum > mysum) { 
 				adder++;
 
 				if (adder > arr.length) {
