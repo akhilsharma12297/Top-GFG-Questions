@@ -8,34 +8,33 @@ public class No21_Count_Inversion {
 
 		int arr[] = new int[] { 1, 20, 6, 4, 5 };
 
-		System.out.println(mergeSort(arr, arr.length));
+		System.out.println(MergeSort(arr, arr.length));
 		int arr2[] = new int[] { 1, 20, 6, 4, 5 };
-		func(arr2, arr2.length);
+		MergeSort(arr2, arr2.length);
 
 	}
 
-	static int mergeSort(int arr[], int array_size) {
+	static int MergeSort(int arr[], int array_size) {
 		int temp[] = new int[array_size];
-
-		return _mergeSort(arr, temp, 0, array_size - 1);
+		return mergeSortHelper(arr, temp, 0, array_size - 1);
 	}
 
-	static int _mergeSort(int arr[], int temp[], int left, int right) {
+	static int mergeSortHelper(int arr[], int temp[], int left, int right) {
 		int mid, inv_count = 0;
 		if (right > left) {
 
 			mid = (right + left) / 2;
 
-			inv_count = _mergeSort(arr, temp, left, mid);
+			inv_count = mergeSortHelper(arr, temp, left, mid);
 
-			inv_count += _mergeSort(arr, temp, mid + 1, right);
+			inv_count += mergeSortHelper(arr, temp, mid + 1, right);
 
-			inv_count += merge(arr, temp, left, mid + 1, right);
+			inv_count += MergeSortedArray(arr, temp, left, mid + 1, right);
 		}
 		return inv_count;
 	}
 
-	static int merge(int arr[], int temp[], int left, int mid, int right) {
+	static int MergeSortedArray(int arr[], int temp[], int left, int mid, int right) {
 		int i, j, k;
 		int inv_count = 0;
 
@@ -64,20 +63,4 @@ public class No21_Count_Inversion {
 		return inv_count;
 	}
 
-	public static void func(int[] arr, int n) {
-		int ctr = 0;
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = i + 1; j < n; j++) {
-
-				if (arr[i] > arr[j]) {
-
-					ctr++;
-
-				}
-
-			}
-		}
-
-		System.out.println(ctr);
-	}
 }
