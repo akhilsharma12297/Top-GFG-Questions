@@ -6,42 +6,37 @@ public class No2_Find_Sum_subarray {
 
 		int[] arr = { 1, 4, 20, 3, 10, 5 };
 
-		int sum = 33;
+		int sum = 24;
 
 		Subarray_sum(arr, sum);
 
 	}
 
 	public static void Subarray_sum(int[] arr, int sum) {
+		int n = arr.length;
+		int curr_sum = arr[0], start = 0, i;
 
-		int mysum = 0;
-		int adder = 0;
-		int sub = 0;
-		while (mysum != sum) {
+		for (i = 1; i <= n; i++) {
 
-			if (sum > mysum) { 
-				adder++;
-
-				if (adder > arr.length) {
-					System.out.println("Out of bound");
-					break;
-				}
-				mysum += arr[adder];
-			} else if (sum < mysum) {
-
-				sub++;
-				if (sub > arr.length) {
-					System.out.println("Out of bound");
-
-					break;
-				}
-				mysum -= arr[sub];
+			while (curr_sum > sum && start < i - 1) {
+				curr_sum = curr_sum - arr[start];
+				start++;
 			}
+
+			if (curr_sum == sum) {
+				for (int p = start; p < i; p++) {
+					System.out.print(arr[p] + " ");
+				}
+				return;
+			}
+
+			if (i < n)
+				curr_sum = curr_sum + arr[i];
 
 		}
 
-		System.out.println(sub + 1 + "." + adder);
-
+		System.out.println("No subarray found");
+		return;
 	}
 
 }

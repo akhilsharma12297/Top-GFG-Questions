@@ -9,17 +9,15 @@ public class No21_Count_Inversion {
 		int arr[] = new int[] { 1, 20, 6, 4, 5 };
 
 		System.out.println(MergeSort(arr, arr.length));
-		int arr2[] = new int[] { 1, 20, 6, 4, 5 };
-		MergeSort(arr2, arr2.length);
 
 	}
 
-	static int MergeSort(int arr[], int array_size) {
+	public static int MergeSort(int arr[], int array_size) {
 		int temp[] = new int[array_size];
 		return mergeSortHelper(arr, temp, 0, array_size - 1);
 	}
 
-	static int mergeSortHelper(int arr[], int temp[], int left, int right) {
+	public static int mergeSortHelper(int arr[], int temp[], int left, int right) {
 		int mid, inv_count = 0;
 		if (right > left) {
 
@@ -34,7 +32,7 @@ public class No21_Count_Inversion {
 		return inv_count;
 	}
 
-	static int MergeSortedArray(int arr[], int temp[], int left, int mid, int right) {
+	public static int MergeSortedArray(int arr[], int temp[], int left, int mid, int right) {
 		int i, j, k;
 		int inv_count = 0;
 
