@@ -1,4 +1,4 @@
-package String;
+package Arrays;
 
 public class No54MedianOfTwoUNequalSortedArrays {
 	public static void main(String[] args) {
