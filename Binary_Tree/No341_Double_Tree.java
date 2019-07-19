@@ -1,6 +1,5 @@
 package Binary_Tree;
 
-
 import java.util.Stack;
 
 public class No341_Double_Tree {
