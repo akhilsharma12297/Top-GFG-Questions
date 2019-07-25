@@ -1,7 +1,6 @@
 package Binary_Tree;
 
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public class No361_Serialize_Deserialize {
 
@@ -73,16 +72,14 @@ public class No361_Serialize_Deserialize {
 
 	}
 
-	public void createArray() {
-
+	public void Serialize() {
 		ArrayList<Integer> idx = new ArrayList<Integer>();
-		createArray(root, idx);
+		serialize(root, idx);
 		idx.add(-1);
-
 		System.out.println(idx);
 	}
 
-	private void createArray(Node node, ArrayList<Integer> idx) {
+	private void serialize(Node node, ArrayList<Integer> idx) {
 
 		if (node == null) {
 			return;
@@ -90,11 +87,62 @@ public class No361_Serialize_Deserialize {
 
 		idx.add(node.data);
 
-		createArray(node.left, idx);
+		serialize(node.left, idx);
 
-		createArray(node.right, idx);
+		serialize(node.right, idx);
 
 		idx.add(-1);
+
+	}
+
+	static String NullSymbol = "X";
+
+	static String Deltmiter = ",";
+
+	public String Serialize_LEETCODE() {
+		String code = Serialize_LEETCODE(root);
+		System.out.println(code);
+		return code;
+
+	}
+
+	private String Serialize_LEETCODE(Node node) {
+
+		if (node == null) {
+			return NullSymbol + Deltmiter;
+		}
+
+		String left = Serialize_LEETCODE(node.left);
+		String right = Serialize_LEETCODE(node.right);
+
+		return node.data + Deltmiter + left + right;
+	}
+
+	public Node DeSerialize_LEETCODE(String Code) {
+
+		Queue<String> queue = new LinkedList<>();
+
+		queue.addAll(Arrays.asList(Code.split(Deltmiter)));
+
+		return DeSerialize_LEETCODE(queue);
+	}
+
+	private Node DeSerialize_LEETCODE(Queue<String> Serialized_Queue) {
+
+		String nodeVal = Serialized_Queue.poll();
+
+		if (nodeVal == NullSymbol) {
+			return null;
+		}
+		Node node = new Node();
+
+		node.data = Integer.valueOf(nodeVal);
+
+		node.left = DeSerialize_LEETCODE(Serialized_Queue);
+
+		node.right = DeSerialize_LEETCODE(Serialized_Queue);
+
+		return node;
 
 	}
 
@@ -108,7 +156,7 @@ public class No361_Serialize_Deserialize {
 
 		System.out.println();
 
-		bt.createArray();
+		bt.Serialize_LEETCODE();
 
 		System.out.println();
 
