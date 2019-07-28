@@ -95,7 +95,7 @@ public class No327_Binary_Tree_to_DLL {
 			head = node;
 		} else {
 			prev.right = node;
-			root.left = prev;
+			node.left = prev;
 		}
 		prev = node;
 
