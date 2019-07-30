@@ -1,7 +1,5 @@
 package Searching_Sorting;
 
-import java.util.HashMap;
-
 //https://www.geeksforgeeks.org/majority-element/
 
 public class No48_Majority_Element {
@@ -15,28 +13,38 @@ public class No48_Majority_Element {
 
 	public static void findMajority(int[] arr) {
 
-		HashMap<Integer, Integer> map = new HashMap<>();
+		int m = arr[0];
+
+		int mctr = 1;
 
 		for (int i = 0; i < arr.length; i++) {
-
-			if (map.containsKey(arr[i])) {
-
-				int count = map.get(arr[i]) + 1;
-
-				if (count >= arr.length / 2) {
-					System.out.println(arr[i]);
-					return;
-				}
-
-				map.put(arr[i], count);
-
+			if (m == arr[i]) {
+				mctr++;
 			} else {
-				map.put(arr[i], 1);
+				if (mctr == 0) {
+					m = arr[i];
+					mctr = 1;
+				} else {
+					mctr -= 1;
+				}
 			}
-
 		}
 
-		System.out.println("N/A");
+		int ans = 0;
+		mctr = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (m == arr[i]) {
+				ans++;
+				mctr++;
+			}
+		}
+
+		if (ans > arr.length / 2) {
+			System.out.println(m + " -> " + mctr);
+		} else {
+			System.out.println("NA");
+		}
 
 	}
 }
