@@ -1,3 +1,4 @@
+
 package Binary_Tree;
 
 import java.util.Stack;
@@ -110,7 +111,7 @@ public class No330_Binary_Tree_To_Circular_LL {
 			head = node;
 		} else {
 			prev.right = node;
-			root.left = prev;
+			node.left = prev;
 		}
 		prev = node;
 
