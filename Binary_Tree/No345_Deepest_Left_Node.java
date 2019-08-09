@@ -72,22 +72,21 @@ public class No345_Deepest_Left_Node {
 
 	}
 
-	public void deepLeft(int key) {
-		deepLeft(root, key, -1);
+	public void deepLeft() {
+		deepLeft(root, 0, false);
 		System.out.println(result);
-
 	}
 
 	static int Max_level = -1;
 	static int result = 0;
 
-	private void deepLeft(Node node, int key, int level) {
+	private void deepLeft(Node node, int level, Boolean isLeft) {
 
 		if (node == null) {
 			return;
 		}
 
-		if (level > Max_level) {
+		if (level > Max_level && (isLeft)) {
 
 			result = node.data;
 
@@ -95,8 +94,8 @@ public class No345_Deepest_Left_Node {
 
 		}
 
-		deepLeft(node.left, key, level + 1);
-		deepLeft(node.right, key, level + 1);
+		deepLeft(node.left, level + 1, true);
+		deepLeft(node.right, level + 1, false);
 
 	}
 
@@ -110,7 +109,7 @@ public class No345_Deepest_Left_Node {
 
 		System.out.println();
 
-		bt.deepLeft(12);
+		bt.deepLeft();
 
 	}
 

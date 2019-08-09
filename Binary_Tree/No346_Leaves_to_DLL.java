@@ -4,14 +4,14 @@ import java.util.Stack;
 
 public class No346_Leaves_to_DLL {
 
-	class Node {
+	static class Node {
 		Node left;
 		Node right;
 		int data;
 
 	}
 
-	static Node root;
+	static public Node root;
 	static int size = 0;
 
 	public No346_Leaves_to_DLL(int[] arr) {
@@ -80,26 +80,31 @@ public class No346_Leaves_to_DLL {
 
 	}
 
-	static Node head = null;
-	static Node tail = head;
+	static Node head = new Node();
+	static Node prev = null;
 
 	private Node Leaves_To_DLL(Node node) {
 
-		if (node.left == null && node.right == null) {
-			if (head == null) {
-				head = node;
-				tail = node;
-			} else {
-				tail.right = node;
-				node.left = tail;
-				tail = node;
+		if (node == null) {
+			return null;
+		}
 
+		if (node.left == null && node.right == null) {
+
+			if (prev == null) {
+				head = node;
+			} else {
+				prev.right = node;
+				node.left = prev;
 			}
+			prev = node;
+
 			return null;
 		}
 
 		node.left = Leaves_To_DLL(node.left);
 		node.right = Leaves_To_DLL(node.right);
+
 		return node;
 	}
 
@@ -125,9 +130,9 @@ public class No346_Leaves_to_DLL {
 		System.out.println();
 
 		bt.Leaves_To_DLL();
-		
+
 		System.out.println();
-		
+
 		bt.display();
 	}
 

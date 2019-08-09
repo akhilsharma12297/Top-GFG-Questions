@@ -72,46 +72,51 @@ public class No327_Binary_Tree_to_DLL {
 
 	}
 
-	Node head = new Node();
+	private void printDLL(Node head) {
 
-	static Node prev = null;
-
-	public void BTtoDLL() {
-
-		BTtoDLL(root);
-
-		printDLL(head);
-	}
-
-	private void BTtoDLL(Node node) {
-
-		if (node == null) {
-			return;
-		}
-
-		BTtoDLL(node.left);
-
-		if (prev == null) {
-			head = node;
-		} else {
-			prev.right = node;
-			node.left = prev;
-		}
-		prev = node;
-
-		BTtoDLL(node.right);
-
-	}
-
-	private void printDLL(Node node) {
-
-		while (node != null) {
+		Node node = head;
+		do {
 			System.out.print(node.data + " -> ");
 			node = node.right;
-		}
+		} while (node != head);
 
 		System.out.println();
 
+	}
+
+	public Node concatenate(Node leftList, Node rightList) {
+		if (leftList == null)
+			return rightList;
+		if (rightList == null)
+			return leftList;
+
+		Node leftLast = leftList.left;
+		Node rightLast = rightList.left;
+
+		leftLast.right = rightList;
+		rightList.left = leftLast;
+
+		leftList.left = rightLast;
+
+		rightLast.right = leftList;
+
+		return leftList;
+	}
+
+	public void btToCDLL() {
+		bTreeToCList(root);
+		printDLL(root);
+	}
+
+	public Node bTreeToCList(Node root) {
+		if (root == null)
+			return null;
+
+		Node left = bTreeToCList(root.left);
+		Node right = bTreeToCList(root.right);
+
+		root.left = root.right = root;
+		return concatenate(concatenate(left, root), right);
 	}
 
 	public static void main(String[] args) {
@@ -124,7 +129,7 @@ public class No327_Binary_Tree_to_DLL {
 
 		System.out.println();
 
-		bt.BTtoDLL();
+		bt.btToCDLL();
 
 		System.out.println();
 
